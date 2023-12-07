@@ -3,15 +3,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
-import { Button } from '@mui/material';
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { NavLink } from "react-router-dom";
 
-const navLinks = [
-  { title: "Nuevo", path: "#nuevo", icon: <AddIcon /> }
-]
-
-export default function ButtonAppBar() {
+export default function Navbar({navArrLinks}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
@@ -20,7 +14,7 @@ export default function ButtonAppBar() {
             ToDo Simple App
           </Typography>
           {
-            navLinks.map(item => (
+            navArrLinks.map(item => (
               <IconButton key={item.title}
                 size="large"
                 edge="start"
@@ -28,7 +22,7 @@ export default function ButtonAppBar() {
                 aria-label="menu"
                 sx={{ mr: 2 }}
                 href={item.path}
-                component="a"
+                to={NavLink}
               >
                 {item.icon}
               </IconButton>

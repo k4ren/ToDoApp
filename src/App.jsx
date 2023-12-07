@@ -1,15 +1,24 @@
-import { Container, Grid } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import Product from "./components/Product";
-import BluCard from "./components/BluCard";
+import { Container } from "@mui/material";
 import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/Home";
+import Registro from "./pages/Registro";
+import AddIcon from '@mui/icons-material/Add';
+import { Route, Routes } from "react-router-dom";
+
+const navArrLinks = [
+  { title: "Nuevo", path: "/registro", icon: <AddIcon /> }
+]
 
 export default function App() {
   return (
-    <Container>
-      <Navbar />
-      {/* <Product></Product>
-      <BluCard></BluCard> */}
-    </Container>
+    <>
+      <Navbar navArrLinks={navArrLinks} />
+      <Container sx={{mt:10}}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/registro" element={<Registro />} />
+        </Routes>
+      </Container>
+    </>
   );
 }
