@@ -1,7 +1,11 @@
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Box, Typography } from "@mui/material";
 import { useState } from "react";
+import { useSnackbar } from "notistack";
+
 
 export default function Registro() {
+
+  const { enqueueSnackbar } = useSnackbar();
   const [formData, setFormData] = useState({
     titulo: "",
     description: "",
@@ -17,11 +21,19 @@ export default function Registro() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    enqueueSnackbar("se ha agregado una nueva tarea!", {
+      severityss: "success",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+    });
     console.log("form:", formData);
   };
 
   return <>
-    <Typography variant="h4" component="h2" sx={{ flexGrow: 1, mb: 2, color: "gray" }}>Agregar nueva tarea</Typography>
+    <Typography variant="h4" component="h2" sx={{ flexGrow: 1, mb: 2, color: "gray" }}>Agregar Tarea</Typography>
     <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
       <TextField
         label="Título"
@@ -58,8 +70,8 @@ export default function Registro() {
           <MenuItem value="finalizado">Finalizado</MenuItem>
         </Select>
       </FormControl>
-      <Button component="a" href="/" variant="outlined" color="error" sx={{ mr: 2 }}>Cancelar</Button>
-      <Button type="submit" variant="contained" color="primary">Enviar</Button>
+      <Button component="a" href="/" variant="outlined" color="error" sx={{ mt: 2, mr: 2 }}>Cancelar</Button>
+      <Button type="submit" variant="contained" color="primary" sx={{mt: 2}}>Enviar</Button>
     </Box>
 
   </>

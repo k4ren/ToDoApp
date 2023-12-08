@@ -5,7 +5,9 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { NavLink } from "react-router-dom";
 
-export default function Navbar({navArrLinks}) {
+import Tooltip from '@mui/material/Tooltip';
+
+export default function Navbar({ navArrLinks }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
@@ -15,17 +17,19 @@ export default function Navbar({navArrLinks}) {
           </Typography>
           {
             navArrLinks.map(item => (
-              <IconButton key={item.title}
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-                href={item.path}
-                to={NavLink}
-              >
-                {item.icon}
-              </IconButton>
+              <Tooltip key={item.title} title="Agregar nueva tarea">
+                <IconButton key={item.title}
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  sx={{ mr: 2 }}
+                  href={item.path}
+                  to={NavLink}
+                >
+                  {item.icon}
+                </IconButton>
+              </Tooltip>
             ))
           }
         </Toolbar>
