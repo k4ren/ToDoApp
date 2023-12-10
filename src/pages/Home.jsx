@@ -6,13 +6,13 @@ import { useState } from "react";
 export default function Home() {
 
   const [todos, setTodos] = useState([
-    { id: 1, titulo: "Revisar Doc", estado: false, descipcion: 'revisar doc oficial', prioridad:'alta'},
-    { id: 2, titulo: "Iniciar projecto", estado: true, descipcion: 'crear proyecto, revisar componentesbasicos', prioridad:'baja'},
-    { id: 3, titulo: "Crear Repositorio", estado: false, descipcion: 'Crear repositorio pra subir proyecto', prioridad:'media'},
+    { id: 1, titulo: "Revisar Doc", estado: false, descripcion: 'revisar doc oficial', prioridad:'alta'},
+    { id: 2, titulo: "Iniciar projecto", estado: true, descripcion: 'crear proyecto, revisar componentesbasicos', prioridad:'baja'},
+    { id: 3, titulo: "Crear Repositorio", estado: false, descripcion: 'Crear repositorio pra subir proyecto', prioridad:'media'},
   ]);
 
+  /* cambio de estado tarea */
   const handleToggle = (id) => {
-    // cambio de estado tarea
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, estado: !todo.estado } : todo

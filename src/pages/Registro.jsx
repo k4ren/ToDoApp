@@ -8,7 +8,7 @@ export default function Registro() {
   const { enqueueSnackbar } = useSnackbar();
   const [formData, setFormData] = useState({
     titulo: "",
-    description: "",
+    descripcion: "",
     estado: "",
   });
 
@@ -47,8 +47,8 @@ export default function Registro() {
 
       <TextField
         label="Descripción"
-        name="description"
-        value={formData.description}
+        name="descripcion"
+        value={formData.descripcion}
         onChange={handleChange}
         fullWidth
         margin="normal"
