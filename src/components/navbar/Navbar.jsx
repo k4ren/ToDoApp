@@ -3,15 +3,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
-import { Button } from '@mui/material';
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { NavLink } from "react-router-dom";
 
-const navLinks = [
-  { title: "Nuevo", path: "#nuevo", icon: <AddIcon /> }
-]
+import Tooltip from '@mui/material/Tooltip';
 
-export default function ButtonAppBar() {
+export default function Navbar({ navArrLinks }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
@@ -20,18 +16,20 @@ export default function ButtonAppBar() {
             ToDo Simple App
           </Typography>
           {
-            navLinks.map(item => (
-              <IconButton key={item.title}
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-                href={item.path}
-                component="a"
-              >
-                {item.icon}
-              </IconButton>
+            navArrLinks.map(item => (
+              <Tooltip key={item.title} title="Agregar nueva tarea">
+                <IconButton key={item.title}
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  sx={{ mr: 2 }}
+                  href={item.path}
+                  to={NavLink}
+                >
+                  {item.icon}
+                </IconButton>
+              </Tooltip>
             ))
           }
         </Toolbar>

@@ -23,14 +23,23 @@ const theme = createTheme({
     }
   },
 });
+import { BrowserRouter } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <SnackbarProvider
+          maxSnack={1}
+          autoHideDuration={3000}
+        >
+          <CssBaseline />
+          <App />
+        </SnackbarProvider>
+      </BrowserRouter>
 
     </ThemeProvider>
   </React.StrictMode>,
