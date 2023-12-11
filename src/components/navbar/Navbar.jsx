@@ -13,7 +13,7 @@ export default function Navbar({ navArrLinks }) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            ToDo Simple App
+          Simple ToDo App
           </Typography>
           {
             navArrLinks.map(item => (
