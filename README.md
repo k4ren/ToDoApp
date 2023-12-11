@@ -18,7 +18,7 @@ Aplicacion para el manejo sencillo de tareas
 ## Screenshots
 
 - Listado de tareas
-[![Captura-desde-2023-12-10-22-05-34.png](https://i.postimg.cc/JzS8NTsr/Captura-desde-2023-12-10-22-05-34.png)](https://postimg.cc/87dxDmd9)
+[![Captura-desde-2023-12-11-04-53-33.png](https://i.postimg.cc/wMpYTj4J/Captura-desde-2023-12-11-04-53-33.png)](https://postimg.cc/mz85mBs2)
 
 - Registro de tareas
 [![Captura-desde-2023-12-10-22-07-04.png](https://i.postimg.cc/ZR7VNQqj/Captura-desde-2023-12-10-22-07-04.png)](https://postimg.cc/MMB72dVj)
